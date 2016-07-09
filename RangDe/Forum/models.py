@@ -7,7 +7,8 @@ from django.db import models
 class user(models.Model):
     name=models.CharField(max_length=64)
     password=models.CharField(max_length=16)
-    phoneNumber=models.IntegerField()
+    phoneNumber=models.CharField(max_length=12)
+    user_email=models.CharField(max_length=32)
 
 class Investor(models.Model):
     investor_id=models.ForeignKey(user)
