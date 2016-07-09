@@ -27,3 +27,6 @@ class Transaction(models.Model):
     time=models.TimeField()
     amount=models.FloatField()
     interest=models.FloatField()
+
+class Answers(models.Model):
+    answer=models.TextField()

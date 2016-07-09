@@ -6,10 +6,10 @@
   <!-- Compiled and minified JavaScript -->
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <body>
+    <body style="background-color:#e3f2fd">
          <nav class="indigo lighten-1">
     <div class="nav-wrapper"><font size="+2">Login/Sign up</font>
       </ul>
@@ -18,49 +18,53 @@
         <div>
             <div class="col-xs-12 col-md-6">
                  <div class="row" style="margin-left:2vw;margin-top:4vw;">
-    <form class="col s12" action="submit.x">
-      <div class="row">
+    <form class="col s12" action="http://127.0.0.1:8000/login/" method="get">
+      {% csrf_token %}
+        <div class="row">
         <div class="input-field col s12">
-          <input id="username" type="text" class="validate">
+		
+          <input id="username" type="text" class="validate" name="name">
           <label for="username">Username</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" class="validate" name="password">
           <label for="password">Password</label>
         </div>
       </div>
           <button class="btn waves-effect waves-light" type="submit">Submit
     <i class="material-icons right">send</i>
   </button>
-      </form>
+      </form >
   </div>
             </div>
             <div class="col-xs-12 col-md-6">
 			<div class="row" style="margin-left:2vw;margin-top:4vw;">
-			    <form class="col s12" action="submit.x">
-      <div class="row">
+			    <form class="col s12" action="http://127.0.0.1:8000/register/" method="get">
+      {% csrf_token %}
+                    <div class="row">
+	  
 	   <div class="input-field col s12">
-          <input id="username" type="text" class="validate">
+          <input id="username" type="text" class="validate" name="name">
           <label for="username">Username</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="password" class="validate" name="password">
           <label for="password">Password</label>
 		   </div>
         </div>
 		<div class="row">
 		  <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
+          <input id="email" type="email" class="validate" name="mail">
           <label for="email">Email</label>
         </div>
 		</div>
 		   <div class="row">
         <div class="input-field col s12">
-          <input id="phone" type="number" class="validate">
+          <input id="phone" type="number" class="validate" name="number">
           <label for="email">Phone Number</label>
         </div>
 		</div>
