@@ -31,5 +31,8 @@ def graph(request,investorId):
     line_chart.add("return", l2)
     line_chart.render_to_file('backend/static/graph.svg')
     temp = loader.get_template("fb_share.html");
-    result = temp.render()
+    marks2=user.objects.values_list(('name')).filter(id=investorId)
+    marks=Investor.objects.values_list(('amount_invested')).filter(investor_id_id=user.objects.get(id='3'))
+    print marks,marks2
+    result = temp.render(context={"name2":marks2})
     return HttpResponse(result)
