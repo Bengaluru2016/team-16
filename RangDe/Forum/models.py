@@ -29,4 +29,4 @@ class Transaction(models.Model):
     interest=models.FloatField()
 
 class Answers(models.Model):
-    answer=models.CharField(max_length=100)
+    answer=models.TextField()
