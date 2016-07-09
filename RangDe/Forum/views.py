@@ -19,8 +19,8 @@ def mail(request):
 def send_email(request):
     import smtplib
     fromaddr = 'srujanbelde18@gmail.com'
-    toaddrs = request.POST['mail']
-    name=request.POST['name']
+    toaddrs = request.GET.get('mail')
+    name=request.GET.get('name')
     us=user(name=name,password='abcd',user_email=toaddrs,phoneNumber='12234')
     us.save()
     inv=Investor(investor_id=us,amount_invested=0,amount_returned=100)
@@ -133,3 +133,32 @@ def Answerslist(Request):
     return HttpResponse(result)
 
 
+def home(request):
+    return render(request, 'index.html')
+
+def register(Request):
+    return render(Request, 'login.html')
+
+def register_upload(request):
+    a = request.GET.get('name','username')
+    b = request.GET.get('password','password')
+    c = request.GET.get('mail','abc@gmail.com')
+    d=request.GET.get('number','1234567890')
+    k = user(name=a, password=b, phoneNumber=d,user_email=c)
+    k.save()
+    return render(request, 'index.html')
+
+
+def login(Request):
+    return render(Request, 'login.html')
+
+def login_check(request):
+    a = request.GET.get('name','username')
+    b = request.GET.get('password','password')
+    k=user.objects.all().filter(name=a)
+    if(k.count()==0):
+        return render(request, 'failed_page.html')
+    ob=k.get(name=a)
+    if(ob.password==b):
+        return render(request, 'dashboard.html',{'user':k})
+    return render(request, 'failed_page.html')

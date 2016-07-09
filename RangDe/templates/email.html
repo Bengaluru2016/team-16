@@ -5,7 +5,7 @@
     <title>Rang De</title>
 </head>
 <body>
-    <form action="http://127.0.0.1:8000/new/" method="post">
+    <form action="http://127.0.0.1:8000/new/" method="get">
         {% csrf_token %}
         Friend Name<input type="text" name="name"><br>
         Friend E-mail<input type="email" name="mail"><br>

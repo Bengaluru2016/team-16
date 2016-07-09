@@ -23,4 +23,8 @@ urlpatterns = [
     url(r'^buck/',views.mail,name='send_email'),
     url(r'^list/',views.Answerslist,name='list'),
     url(r'^list1/',views.insert_answer,name='list1'),
+    url(r'^home/',views.home,name='home'),
+    url(r'^login/',views.login_check,name='login_insert'),
+    url(r'^register/',views.register_upload,name='home'),
+    url(r'^login_page/',views.login,name='login_insert'),
 ]
