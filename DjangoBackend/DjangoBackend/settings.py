@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'DjangoBackend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'rangde_db',
+        'NAME': 'rangde',
         'USER': 'root',
         'PASSWORD': 'mysql@117',
         'HOST': 'localhost',  # Or an IP Address that your DB is hosted on

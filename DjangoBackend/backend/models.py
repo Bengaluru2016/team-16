@@ -26,3 +26,14 @@ class Transaction(models.Model):
     time=models.TimeField()
     amount=models.FloatField()
     interest=models.FloatField()
+class return_payment(models.Model):
+    investor_id = models.ForeignKey(Investor)
+    borrower_id = models.ForeignKey(Borrower)
+    date = models.DateField()
+    time = models.TimeField()
+    amount = models.FloatField()
+class investment_track(models.Model):
+    investor_id=models.ForeignKey(Investor)
+    amount_invested=models.FloatField()
+    date_invested=models.DateField()
+    time_invested=models.TimeField()
