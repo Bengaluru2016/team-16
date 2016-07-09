@@ -20,4 +20,5 @@ from Forum import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^new/',views.send_email,name='email'),
+    url(r'^buck/',views.mail,name='send_email'),
 ]

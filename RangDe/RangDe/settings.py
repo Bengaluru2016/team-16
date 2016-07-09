@@ -79,7 +79,10 @@ WSGI_APPLICATION = 'RangDe.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'',
+        'NAME':'rangde',
+        'USER':'root',
+        'PASSWORD':'sayonaras8',
+        'HOST':'localhost',
     }
 }
 
