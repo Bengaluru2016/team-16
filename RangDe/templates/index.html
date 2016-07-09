@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +12,10 @@
     <title>Rang De</title>
 
     <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.3/css/bootstrap-tour.min.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script type="text/javascript" type="text/html" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.3/js/bootstrap-tour.min.js"></script> 
 
     <!-- Custom Fonts -->
@@ -27,7 +27,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="../Forum/static/css/creative.min.css" rel="stylesheet">
     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -84,7 +84,7 @@ tour.init();
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" " href="#about">About</a>
+                        <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
@@ -93,7 +93,7 @@ tour.init();
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="http://127.0.0.1:8000/login_page/">Login</a>
+                        <a class="page-scroll" href="http:// ec2-54-169-186-239.ap-southeast-1.compute.amazonaws.com:8000/login_page/">Login</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
@@ -247,13 +247,14 @@ Let us change the statistic.</p>
     <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/creative.min.js"></script>
+    <script src="../Forum/static/js/creative.min.js"></script>
      <div class="fixed" style="position: fixed;
     bottom: 10px;
     right: 0;
     width: 100px;">
         
-<a class="waves-effect waves-light btn" href="http://127.0.0.1:8000/list/" style="color:blue;">Chat</a>
+<a class="waves-effect waves-light btn" href="http:// ec2-54-169-186-239.ap-southeast-1.compute.amazonaws.com/list/" style="color:blue;">Chat</a>
+<a class="waves-effect waves-light btn" href="https://github.com/Bengaluru2016/team-16/blob/master/Twitter%20bot.ipynb" style="color:green;">twitter</a>
     </div>
 
 </body>
