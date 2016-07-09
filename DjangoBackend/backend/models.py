@@ -9,7 +9,8 @@ from django.db.models.base import Model
 class user(models.Model):
     name=models.CharField(max_length=64)
     password=models.CharField(max_length=16)
-    phoneNumber=models.IntegerField()
+    email=models.EmailField()
+    phoneNumber=models.CharField(max_length=12)
 class Investor(models.Model):
     investor_id=models.ForeignKey(user)
     amount_invested=models.FloatField()
