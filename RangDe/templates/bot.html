@@ -14,17 +14,11 @@
     <div class="page-header">
       <h1>HELLO<small>i'm here to assist you :)</small></h1>
     </div>
-<div class="jumbotron">
-	<div class="container">
-		<h1>how can i help you! :)</h1>
-		<p>
-        <form>
-            Your Question<input type="text" name="question"><br>
-            <input type="submit" value="answeer plz" style="background-color: lightseagreen">
-        </form>
-        </p>
-	</div>
-</div>
+    <form action="http://127.0.0.1:8000/list/" method="get">
+        {% csrf_token %}
+        Question<input type="text" name="ne">
+        <input type="submit" name="submit">
+    </form>
     <table border="2">
         <tr>
             <th>answer</th>
