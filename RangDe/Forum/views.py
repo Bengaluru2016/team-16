@@ -22,10 +22,7 @@ def send_email(request):
     fromaddr = 'srujanbelde18@gmail.com'
     toaddrs = request.POST['mail']
     name=request.POST['name']
-    msg = 'hello Mr'+name+'your friend Mr Srujan has invested into RangDe ' \
-                          'and earned rs 50 and he has given that to you to invest to invest into our firm plese' \
-                          'accept the following link to do so' \
-                          'thankyou :)'
+    msg = 'hello Mr your friend Mr Srujan has invested into RangDe'
     username = 'srujanbelde18@gmail.com'
     password = 'xxxx1234XXXX'
     try:
@@ -34,7 +31,6 @@ def send_email(request):
         server.login(username, password)
         server.sendmail(fromaddr, toaddrs, msg)
         server.quit()
-        click.echo("successfull sent report")
     except Exception as e:
         print e
-        click.echo("not sent")
+    return render(request, 'success.html')
