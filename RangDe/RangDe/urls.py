@@ -21,4 +21,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^new/',views.send_email,name='email'),
     url(r'^buck/',views.mail,name='send_email'),
+    url(r'^list/',views.Answerslist,name='list'),
+    url(r'^list1/',views.insert_answer,name='list1'),
 ]
