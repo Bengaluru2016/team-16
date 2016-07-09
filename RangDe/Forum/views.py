@@ -13,6 +13,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 from django.shortcuts import render
+from Forum.models import *
+import MySQLdb
 
 def mail(request):
     return render(request, 'email.html')
@@ -22,19 +24,22 @@ def send_email(request):
     fromaddr = 'srujanbelde18@gmail.com'
     toaddrs = request.POST['mail']
     name=request.POST['name']
-    msg = 'hello Mr'+name+'your friend Mr Srujan has invested into RangDe ' \
-                          'and earned rs 50 and he has given that to you to invest to invest into our firm plese' \
-                          'accept the following link to do so' \
-                          'thankyou :)'
+    us=user(name=name,password='abcd',user_email=toaddrs,phoneNumber='12234')
+    us.save()
+    inv=Investor(investor_id=us,amount_invested=0,amount_returned=100)
+    inv.save()
+    msg = MIMEText("http://127.0.0.1:8000/new/")
+    msg['Subject'] = 'subject'
+    msg['From'] = 'xxx'
+    msg['To'] = 'xxx'
     username = 'srujanbelde18@gmail.com'
     password = 'xxxx1234XXXX'
     try:
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.starttls()
         server.login(username, password)
-        server.sendmail(fromaddr, toaddrs, msg)
+        server.sendmail(fromaddr, toaddrs, msg.as_string())
         server.quit()
-        click.echo("successfull sent report")
     except Exception as e:
         print e
-        click.echo("not sent")
+    return render(request, 'success.html')
