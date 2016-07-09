@@ -12,7 +12,11 @@
     <title>Creative - Start Bootstrap Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.3/css/bootstrap-tour.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.3/js/bootstrap-tour.min.js"></script> 
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +35,31 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+<script>
+        $(function(){        
+        var tour = new Tour();
+ 
+  tour.addStep(
+  {
+    element: "#about",
+    title: "Title of my step",
+    content: "Content of my step"
+  });
+  tour.addStep({
+    element: "#myCarousel",
+    title: "Title of my step",
+    content: "Content of my step"
+  });
 
+// Initialize the tour
+tour.init();
+//tour.start();
+// Start the tour
+//$('#mytour').click(function(){
+  tour.start(true);
+//});
+        });
+        </script>
 </head>
 
 <body id="page-top">
@@ -61,10 +89,6 @@
                     <li>
                         <a class="page-scroll" style="color:#67412A;" href="#contact">Contact</a>
                     </li>
-					<li>
-                        <a class="p1" style="color:#67412A;" href="login.html">Sign up/Login</a>
-                    </li>
-					
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
