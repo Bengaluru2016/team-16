@@ -146,7 +146,7 @@ def register_upload(request):
     d=request.GET.get('number','1234567890')
     k = user(name=a, password=b, phoneNumber=d,user_email=c)
     k.save()
-    return render(request, 'index.html.bak')
+    return render(request, 'index.html')
 
 
 def login(Request):
@@ -160,6 +160,25 @@ def login_check(request):
         return render(request, 'failed_page.html')
     ob=k.get(name=a)
     if(ob.password==b):
+        l1 = []
+        l2 = []
+        marks = investment_track.objects.values_list('amount_invested').filter(investor_id=user.objects.get(id=ob.id))
+        print marks
+        # we can have time interval vs amount  plot
+        for rows in marks:
+            print rows
+            l1.append(rows[0])
+        line_chart = pygal.Line()
+        # add functiion name for plot and list of variables to genrate plot
+        line_chart.add("investment", l1)
+        marks = return_payment.objects.values_list(('amount')).filter(investor_id_id=user.objects.get(id=ob.id))
+        print marks
+        for rows in marks:
+            print rows
+            l2.append(rows[0])
+            print l2
+        line_chart.add("return", l2)
+        line_chart.render_to_file('Forum/static/graph.svg')
         return render(request, 'dashboard.html',{'user':k})
     return render(request, 'failed_page.html')
 
