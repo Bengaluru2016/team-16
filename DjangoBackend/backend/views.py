@@ -20,7 +20,7 @@ def graph(request,investorId):
     line_chart = pygal.Line()
     # add functiion name for plot and list of variables to genrate plot
     line_chart.add("investment",l1)
-    marks=return_payment.objects.values_list(('amount')).filter(investor_id_id=user.objects.get(id='1'))
+    marks=return_payment.objects.values_list(('amount')).filter(investor_id_id=user.objects.get(id=investorId))
     print marks
     for rows in marks:
         print rows
@@ -31,7 +31,7 @@ def graph(request,investorId):
     # here we are rendering a template to generate html code  which can be shared via facebook on their respective timelines
     temp = loader.get_template("fb_share.html");
     marks2=user.objects.values(('name')).filter(id=investorId)
-    marks=Investor.objects.values(('amount_invested')).filter(investor_id_id=user.objects.get(id='3'))
+    marks=Investor.objects.values(('amount_invested')).filter(investor_id_id=user.objects.get(id=investorId))
     l1=marks
     l2=marks2
     print l1,l2

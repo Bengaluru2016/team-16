@@ -9,7 +9,7 @@
   <!-- Compiled and minified JavaScript -->
      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
@@ -22,11 +22,13 @@
         i am {{ k.name}}.
         {% endfor %}
         {% for k in investoramt %}
-        i donated {{ k.amount_invested }}.
+        i invested {{ k.amount_invested }}.
         {% endfor %}
          Donating to the cause ,the satisfaction I have received is immense and complete. The investment I have made and its impact over time is depicted through this infographic. I invite you to join this campaign and immerse yourself in this wonderful work which is changing lives
         </p>
+    <span style="align:center">
    <img src="/static/graph.svg" width="50%" height="50%">
     </img>
+        </span>
 </body>
 </html>
