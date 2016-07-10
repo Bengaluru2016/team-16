@@ -30,12 +30,10 @@ def graph(request,investorId):
     line_chart.render_to_file('backend/static/graph.svg')
     # here we are rendering a template to generate html code  which can be shared via facebook on their respective timelines
     temp = loader.get_template("fb_share.html");
-    marks2=user.objects.values_list(('name')).filter(id=investorId)
-    marks=Investor.objects.values_list(('amount_invested')).filter(investor_id_id=user.objects.get(id='3'))
-    l1=[]
-    l2=[]
-    l1=marks[0]
-    l2=marks2[0]
+    marks2=user.objects.values(('name')).filter(id=investorId)
+    marks=Investor.objects.values(('amount_invested')).filter(investor_id_id=user.objects.get(id='3'))
+    l1=marks
+    l2=marks2
     print l1,l2
-    result = temp.render(context={"name2":l2,"investoramt":l1})
+    result = temp.render(context={"name2":marks2,"investoramt":marks})
     return HttpResponse(result)

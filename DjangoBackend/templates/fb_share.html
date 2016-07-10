@@ -6,7 +6,13 @@
 </head>
 <body>
     <p>
-        i am {{ name2}}.i donated {{ investoramt }}.
+        {% for k in name2 %}
+        i am {{ k.name}}.
+        {% endfor %}
+        {% for k in investoramt %}
+        i donated {{ k.amount_invested }}.
+        {% endfor %}
+
         </p>
    <img src="/static/graph.svg" width="50%" height="50%">
     </img>
