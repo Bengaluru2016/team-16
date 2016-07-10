@@ -5,7 +5,8 @@ from django.db import models
 # Create your models here.
 from django.db.models.base import Model
 
-
+#models to store data in data base
+#database here used a=is My sql database.to change database settings goto settings.py
 class user(models.Model):
     name=models.CharField(max_length=64)
     password=models.CharField(max_length=16)
