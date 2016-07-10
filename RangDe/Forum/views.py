@@ -146,7 +146,7 @@ def register_upload(request):
     d=request.GET.get('number','1234567890')
     k = user(name=a, password=b, phoneNumber=d,user_email=c)
     k.save()
-    return render(request, 'index.html')
+    return render(request, 'index.html.bak')
 
 
 def login(Request):
