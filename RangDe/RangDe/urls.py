@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^login/',views.login_check,name='login_insert'),
     url(r'^register/',views.register_upload,name='home'),
     url(r'^login_page/',views.login,name='login_insert'),
+    url(r'^graph_page/(?P<investorId>[0-9]+)',views.graph,name='graph_page'),
 ]
